@@ -1,128 +1,48 @@
-:root {
-  --bg: #e4ebdc;
-  --paper: #fcfcfb;
-  --text: #3f5560;
-  --muted: #9a8f7a;
-  --blue: #2a4fb5;
-  --accent: #d1305f;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vinsensius Panjaitan - Illustrator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
 
-* { box-sizing: border-box; }
+  <header class="hero" id="home">
+    <nav class="nav">
+      <ul class="menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <ul class="social">
+        <li><a href="https://instagram.com/usernameanda">Instagram</a></li>
+        <li><a href="https://behance.net/usernameanda">Behance</a></li>
+      </ul>
+    </nav>
 
-body {
-  margin: 0;
-  background: var(--bg);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
-  line-height: 1.7;
-  color: var(--text);
-}
+    <div class="hero-text">
+      <h1>Halo, saya<br>Vinsensius</h1>
+      <p>Illustrator yang suka menggambar makhluk aneh dan dunia yang tidak biasa.</p>
+    </div>
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+    <img class="hero-art" src="images/hero-illustration.png" alt="Ilustrasi andalan">
+  </header>
 
-ul { list-style: none; margin: 0; padding: 0; }
+  <main id="work" class="gallery">
+    <img src="images/karya-1.jpg" alt="Judul karya 1">
+    <img src="images/karya-2.jpg" alt="Judul karya 2">
+    <img src="images/karya-3.jpg" alt="Judul karya 3">
+  </main>
 
-/* Halaman putih di tengah */
-.page {
-  max-width: 1000px;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 0 48px 32px;
-  background: var(--paper);
-}
+  <footer id="contact" class="contact">
+    <h2>Mari bekerja sama</h2>
+    <p><a href="mailto:emailanda@example.com">emailanda@example.com</a></p>
+  </footer>
 
-/* ---------- Header ---------- */
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding-top: 24px;
-}
-
-.logo {
-  font-family: "Caveat Brush", cursive;
-  font-size: 2.2rem;
-  line-height: 1;
-  color: #111;
-}
-.logo:hover { text-decoration: none; }
-
-.tagline {
-  margin: 8px 0 0;
-  font-size: 0.65rem;
-  font-weight: bold;
-  color: var(--text);
-}
-
-.menu { display: flex; gap: 24px; padding-top: 6px; }
-
-.menu a {
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.menu a.active { color: var(--blue); }
-
-/* ---------- Tentang ---------- */
-.about {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 48px;
-  align-items: start;
-  margin-top: 64px;
-}
-
-.photo {
-  aspect-ratio: 1;
-  border-radius: 50%;
-  overflow: hidden;
-  background: #e3e3e0; /* terlihat kalau foto belum diunggah */
-}
-
-.photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.bio h1,
-.bio h2 {
-  margin: 0 0 16px;
-  font-family: "Jost", sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  color: #222;
-}
-.bio h1 { font-size: 1.3rem; }
-.bio h2 { font-size: 1.1rem; margin-top: 28px; }
-
-.bio p { margin: 0 0 14px; }
-
-.available { font-weight: bold; color: #222; }
-
-.resume { font-weight: bold; }
-
-.links li { margin-bottom: 2px; }
-
-/* ---------- Footer ---------- */
-.site-footer {
-  display: flex;
-  justify-content: flex-end;
-  gap: 16px;
-  margin-top: 96px;
-  font-size: 0.7rem;
-}
-
-/* ---------- Mobile ---------- */
-@media (max-width: 700px) {
-  .page { padding: 0 20px 24px; }
-  .site-header { flex-direction: column; gap: 16px; }
-  .menu { flex-wrap: wrap; gap: 16px; }
-  .about { grid-template-columns: 1fr; gap: 32px; margin-top: 40px; }
-  .photo { max-width: 280px; margin: 0 auto; }
-  .site-footer { justify-content: flex-start; margin-top: 56px; }
-}
+</body>
+</html>
