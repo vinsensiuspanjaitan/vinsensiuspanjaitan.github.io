@@ -1,28 +1,135 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="utf-8">
-  <title>Vinsensius Panjaitan</title>
-    <style>
-    body {
-      background: #2e2e2e;
-      color: white;
-      font-family: sans-serif;
-      margin: 0;
-      padding: 48px 4vw;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2.4rem;
-    }
-    p {
-      margin: 4px 0 0;
-      color: #6f6f6f;
-    }
-  </style>
-</head>
-<body>
-  <h1>Vinsensius Panjaitan</h1>
-  <p>Ilustrator</p>
-</body>
-</html>
+:root {
+  --mist: #b9c4b4;
+  --mist-dark: #7f8d7a;
+  --paper: #f7f6f2;
+  --ink: #2b2f2a;
+  --accent: #b5402f;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+
+ul { list-style: none; margin: 0; padding: 0; }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  /* Ganti dengan foto latar Anda: url("images/background.jpg") */
+  background:
+    linear-gradient(rgba(0,0,0,.12), rgba(0,0,0,.12)),
+    url("images/background.jpg") center / cover no-repeat,
+    linear-gradient(180deg, var(--mist) 0%, var(--mist-dark) 100%);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 5vw;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.menu, .social { display: flex; gap: 28px; }
+
+.menu a.active {
+  background: #fff;
+  color: var(--ink);
+  padding: 2px 8px;
+}
+
+.nav a:hover { opacity: 0.7; }
+
+.nav a:focus-visible,
+.contact a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.hero-text {
+  position: absolute;
+  left: 8vw;
+  bottom: 18vh;
+  max-width: 28rem;
+}
+
+.hero h1 {
+  margin: 0 0 16px;
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  line-height: 0.95;
+}
+
+.hero-text p {
+  margin: 0;
+  max-width: 22rem;
+  font-size: 1rem;
+}
+
+.hero-art {
+  position: absolute;
+  right: 6vw;
+  bottom: 0;
+  height: 75vh;
+  max-width: 45vw;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+/* ---------- About ---------- */
+.about, .contact {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 96px 24px;
+  text-align: center;
+}
+
+.about h2, .contact h2 {
+  margin: 0 0 12px;
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  font-size: 2.4rem;
+}
+
+.contact a {
+  border-bottom: 2px solid var(--accent);
+}
+
+/* ---------- Gallery ---------- */
+.gallery {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 700px) {
+  .social { display: none; }
+  .menu { gap: 16px; flex-wrap: wrap; }
+  .hero-text { bottom: 38vh; }
+  .hero-art { height: 38vh; right: 50%; transform: translateX(50%); max-width: 90vw; }
+}
