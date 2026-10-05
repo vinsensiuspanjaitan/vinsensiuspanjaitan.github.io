@@ -9,12 +9,22 @@ body {
   color: #222;
 }
 
+/* ===== HERO ===== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 0 40px 40px;
+}
+
 /* ===== NAVIGASI ===== */
 .nav {
+  grid-column: 1 / -1; /* menu memenuhi lebar atas */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 0;
 }
 
 .menu,
@@ -29,6 +39,7 @@ body {
 .nav a {
   text-decoration: none;
   color: inherit;
+  font-weight: 500;
 }
 
 .nav a:hover,
@@ -36,27 +47,25 @@ body {
   text-decoration: underline;
 }
 
-/* ===== HERO ===== */
-.hero-text {
-  padding: 60px 40px 20px;
-}
-
+/* ===== TEKS HERO ===== */
 .hero-text h1 {
   font-family: "Caveat Brush", cursive;
-  font-size: 64px;
+  font-size: 72px;
   line-height: 1.1;
   margin: 0 0 16px;
 }
 
 .hero-text p {
-  max-width: 480px;
+  max-width: 460px;
   font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .hero-art {
-  display: block;
-  max-width: 100%;
-  margin: 20px auto;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 
 /* ===== GALERI ===== */
@@ -69,7 +78,7 @@ body {
 .gallery img {
   flex: 1;
   min-width: 0;
-  max-width: 33%;
+  width: 100%;
   height: auto;
   border-radius: 8px;
 }
@@ -84,4 +93,30 @@ body {
   font-family: "Caveat Brush", cursive;
   font-size: 40px;
   margin: 0 0 12px;
+}
+
+.contact a {
+  color: inherit;
+}
+
+/* ===== TAMPILAN HP ===== */
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 20px 30px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-text h1 {
+    font-size: 48px;
+  }
+
+  .gallery {
+    flex-direction: column;
+    padding: 20px;
+  }
 }
